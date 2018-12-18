@@ -2464,6 +2464,10 @@ in-publish@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/in-publish/-/in-publish-2.0.0.tgz#e20ff5e3a2afc2690320b6dc552682a9c7fadf51"
 
+include-media@^1.4.8:
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/include-media/-/include-media-1.4.9.tgz#d0020b7be3eb2d54868a20943595ce380e0bc43b"
+
 indent-string@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-2.1.0.tgz#8e2d48348742121b4a8218b7a137e9a52049dc80"
@@ -3216,6 +3220,10 @@ normalize-path@^2.1.1:
 normalize-range@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
+
+normalize.css@^5.0.0:
+  version "5.0.0"
+  resolved "http://registry.npmjs.org/normalize.css/-/normalize.css-5.0.0.tgz#7cec875ce8178a5333c4de80b68ea9c18b9d7c37"
 
 now-and-later@^2.0.0:
   version "2.0.0"

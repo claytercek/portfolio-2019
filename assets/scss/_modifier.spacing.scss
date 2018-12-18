@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    $SPACING
+\*------------------------------------*/
+
+/**
+ * Spacing
+ *
+ * For more information on this spacing technique, please see:
+ * http://alistapart.com/article/axiomatic-css-and-lobotomized-owls.
+ */
+
+.u-spacing {
+	& > * + * {
+		margin-top: $space;
+	}
+
+	&--half {
+		& > * + * {
+			margin-top: $space-half;
+		}
+	}
+
+	&--double {
+		& > * + * {
+			margin-top: $space-double;
+		}
+
+		&--top {
+			margin-top: $space-double;
+		}
+
+		&--bottom {
+			margin-bottom: $space-double;
+		}
+	}
+}

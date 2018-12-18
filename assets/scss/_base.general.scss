@@ -1,0 +1,30 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	background-color: #25134b;
+}
+
+img {
+	max-width: 100%;
+}
+
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+p,
+ul {
+	margin: 0;
+}
+
+ol,
+ul {
+	padding-left: 0;
+	list-style: none;
+}

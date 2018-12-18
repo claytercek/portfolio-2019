@@ -1,0 +1,32 @@
+// Typography
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+
+// Colors
+$color-white: #ffffff;
+
+/**
+ *
+ * Fonts
+ *
+ **/
+
+$font-family-primary: Helvetica, sans-serif;
+$font-family-secondary: Helvetica, sans-serif;
+
+/**
+ * Default Spacing/Padding
+ */
+
+$space: 25px;
+$space-quarter: $space/4;
+$space-half: $space/2;
+$space-and-half: $space * 1.5;
+$space-double: $space * 2;
+$space-triple: $space * 3;
+$space-quad: $space * 4;
+$pad: 15px;
+$pad-half: $pad/2;
+$pad-and-half: $pad * 1.5;
+$pad-double: $pad * 2;
+$gutter: 50px;
