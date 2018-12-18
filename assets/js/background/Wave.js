@@ -63,14 +63,16 @@ export default class Wave {
 		// this.renderPoints();
 	}
 
-	resize(ratio) {
+	resize(ratio, range) {
 		this.cw = this.cw / ratio.w;
 		this.ch = this.ch / ratio.h;
+
+		this.OPT.range = range;
 
 		let i = this.points.length;
 
 		while (i--) {
-			this.points[i].resize(ratio);
+			this.points[i].resize(ratio, range);
 		}
 	}
 

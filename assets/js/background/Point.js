@@ -91,7 +91,9 @@ export default class Point {
 		this.ctx.strokeStyle = "rgba(1,1,1,0)";
 	}
 
-	resize(ratio) {
+	resize(ratio, range) {
+		this.OPT.range = range;
+
 		this.anchorX = this.anchorX / ratio.w;
 		this.anchorY = this.anchorY / ratio.h;
 

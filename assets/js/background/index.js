@@ -86,8 +86,13 @@ var resize = function() {
 		h: oldCh / ch
 	};
 
+	OPT.range = {
+		x: cw * 0.05,
+		y: ch * 0.07
+	};
+
 	for (var wave of waves) {
-		wave.resize(ratio);
+		wave.resize(ratio, OPT.range);
 	}
 
 	ctx.lineJoin = "round";
