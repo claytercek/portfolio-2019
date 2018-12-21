@@ -1,9 +1,67 @@
+.c-project {
+	display: block;
+
+	@include media('>=medium') {
+		position: absolute;
+		width: 70vw;
+		max-width: 1200px;
+		height: 60vh;
+		max-height: 670px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+}
+
+
 .c-project--text {
-	background-color: $color-white;
-	max-width: 300px;
-	padding: $pad-double;
+	@include media ('>=medium') {
+		background-color: $color-white;
+		min-width: 320px;
+		padding: $pad-triple;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+.c-project--title {
+	font-family: $font-family-secondary;
+	font-weight: 500;
+	font-size: $font-size-base * 2;
+	line-height: $line-height-base;
+}
+
+.c-project--hero {
+	height: 140px;
+	position: relative;
+	
+	@include media('>=medium') {
+		height: unset;
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: $space-triple;
+		bottom: $space-triple;
+		overflow: hidden;
+		
+	}
+	
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 }
 
 .c-project--category {
 	color: $color-purple;
+
+	@include media('<medium') {
+		display: none;
+	}
 }

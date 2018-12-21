@@ -22,15 +22,9 @@ $font-family-secondary: 'Lato', Helvetica, sans-serif;
 		font-family: $font-family-primary;
 		font-weight: 400;
 		text-transform: uppercase;
-		font-size: $font-size-base;
+		font-size: $font-size-base * 0.8;
 		line-height: $line-height-base;
-	}
-	
-	&-title {
-		font-family: $font-family-secondary;
-		font-weight: 500;
-		font-size: $font-size-base * 2;
-		line-height: $line-height-base;
+		letter-spacing: 2px;
 	}
 	
 	&-beta {
@@ -44,7 +38,7 @@ $font-family-secondary: 'Lato', Helvetica, sans-serif;
 		font-family: $font-family-primary;
 		font-weight: 600;
 		text-transform: uppercase;
-		font-size: $font-size-base * 0.9;
+		font-size: $font-size-base * 0.8;
 		line-height: $line-height-base;
 		letter-spacing: 2px;
 	}
@@ -61,8 +55,9 @@ $space-and-half: $space * 1.5;
 $space-double: $space * 2;
 $space-triple: $space * 3;
 $space-quad: $space * 4;
-$pad: 15px;
+$pad: 16px;
 $pad-half: $pad/2;
 $pad-and-half: $pad * 1.5;
 $pad-double: $pad * 2;
+$pad-triple: $pad * 3;
 $gutter: 50px;
