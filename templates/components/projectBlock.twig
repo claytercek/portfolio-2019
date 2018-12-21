@@ -1,0 +1,10 @@
+<div class="c-project">
+	<div class="c-project--hero">
+		<img src="{{ project.thumbnail.src }}" srcset="{{ project.thumnbail.srcset }}" alt="{{project.title}}"/>
+	</div>
+	<div class="c-project--text u-align--center u-spacing">
+		<h4 class="c-project--category u-font-gamma">{{project.category}}</h4>
+		<h2 class="u-font-title">{{project.title}}</h2>
+		{% include 'button.twig' with {'text': 'view project', 'link': project.link } only %}
+	</div>
+</div>

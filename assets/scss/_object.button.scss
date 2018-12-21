@@ -1,0 +1,33 @@
+.o-button {
+	
+	button {
+		cursor: pointer;
+		position: relative;
+		height: $space-double;
+		padding: 0 $space-half;
+		border: 1px solid $color-red;
+		color: $color-red;
+		overflow: hidden;
+		
+		&:after {
+			content: " ";
+			position: absolute;
+			left: 0;
+			top: 100%;
+			width: 100%;
+			height: 100%;
+			background-color: $color-red;
+			transition: all .5s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+		}
+
+		&:hover:after {
+			top: -100%;
+		}
+
+		&:active {
+			color: $color-white;
+			background-color: $color-red;
+		}
+	}
+
+}

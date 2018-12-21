@@ -13,9 +13,11 @@
     <body>
         <button id="wave-toggleMenu">Toggle Menu</button>
         <canvas class="c-background"></canvas>
-        {% block content %}
-            Sorry, no content
-        {% endblock %}
-        {{ function("wp_footer") }}
+        <div class="content">
+            {% block content %}
+                Sorry, no content
+            {% endblock %}
+            {{ function("wp_footer") }}
+        </div>
     </body>
 </html>

@@ -4,6 +4,8 @@ $line-height-base: 1.5;
 
 // Colors
 $color-white: #ffffff;
+$color-red: #F48;
+$color-purple: #7C247A;
 
 /**
  *
@@ -11,14 +13,48 @@ $color-white: #ffffff;
  *
  **/
 
-$font-family-primary: Helvetica, sans-serif;
-$font-family-secondary: Helvetica, sans-serif;
+$font-family-primary: 'Montserrat', Helvetica, sans-serif;
+$font-family-secondary: 'Lato', Helvetica, sans-serif;
+
+
+.u-font {
+	&-alpha {
+		font-family: $font-family-primary;
+		font-weight: 400;
+		text-transform: uppercase;
+		font-size: $font-size-base;
+		line-height: $line-height-base;
+	}
+	
+	&-title {
+		font-family: $font-family-secondary;
+		font-weight: 500;
+		font-size: $font-size-base * 2;
+		line-height: $line-height-base;
+	}
+	
+	&-beta {
+		font-family: $font-family-secondary;
+		font-weight: 500;
+		font-size: $font-size-base;
+		line-height: $line-height-base;
+	}
+	
+	&-gamma {
+		font-family: $font-family-primary;
+		font-weight: 600;
+		text-transform: uppercase;
+		font-size: $font-size-base * 0.9;
+		line-height: $line-height-base;
+		letter-spacing: 2px;
+	}
+}
 
 /**
  * Default Spacing/Padding
  */
 
-$space: 25px;
+$space: 24px;
 $space-quarter: $space/4;
 $space-half: $space/2;
 $space-and-half: $space * 1.5;

@@ -1,2 +1,2 @@
 <?php
-get_template_part('controllers/projectController');
+get_template_part('controllers/projectsController');

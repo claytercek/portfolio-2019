@@ -4,6 +4,9 @@
 @import "normalize";
 @import "include-media";
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
 /*------------------------------------*\
     $CONFIG
 \*------------------------------------*/
@@ -24,11 +27,13 @@ $showMediaQueryPreview: true;
 /*------------------------------------*\
     $OBJECTS
 \*------------------------------------*/
+@import "_object.button";
 
 /*------------------------------------*\
     $COMPONENTS
 \*------------------------------------*/
 @import "_component.background";
+@import "_component.projectBlock";
 
 /*------------------------------------*\
     $MODIFIER

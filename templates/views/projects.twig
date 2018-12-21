@@ -1,0 +1,6 @@
+{% extends "base.twig" %}
+{% block content %}
+	{% for project in projects %}
+		{% include 'projectBlock.twig' with {'project': project} only %}
+	{% endfor %}
+{% endblock %}

@@ -2,7 +2,13 @@
 /*
 Template Name: Archives
  */
-$context = Timber::get_context();
 
-$context['projects'] = new Timber\Post();
-Timber::render('archive-projects.twig', $context);
+$args = array(
+	'numberposts' => -1,
+	'post_type'   => 'post'
+);
+
+$context = Timber::get_context();
+$context['projects'] = Timber::get_posts($args);
+
+Timber::render('projects.twig', $context);

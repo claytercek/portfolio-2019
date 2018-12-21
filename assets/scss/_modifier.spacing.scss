@@ -11,6 +11,7 @@
 
 .u-spacing {
 	& > * + * {
+		display: block;
 		margin-top: $space;
 	}
 
