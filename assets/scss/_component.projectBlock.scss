@@ -1,7 +1,8 @@
 .c-project {
 	display: block;
+	position: relative;
 
-	@include media('>=medium') {
+	@include media(">=medium") {
 		position: absolute;
 		width: 70vw;
 		max-width: 1200px;
@@ -11,18 +12,59 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
-
 }
 
+.c-project--titleMobile {
+	display: none;
+	font-family: $font-family-secondary;
+	font-weight: 500;
+	font-size: $font-size-base;
+	line-height: 1.5;
+	background-color: $color-white;
+	width: 65%;
+	padding: $space-half ($space-half * 1.5);
+	padding-right: $space * 1.2;
+
+	position: absolute;
+	bottom: 0;
+	right: 0;
+
+	@include media("<medium") {
+		display: block;
+	}
+
+	&::after {
+		position: absolute;
+		top: 50%;
+		right: $space-half * 1.5;
+		transform: translateY(-100%) rotate(-45deg);
+		content: " ";
+		width: 0.6rem;
+		height: 0.6rem;
+		border-bottom: 2px solid $color-red;
+		border-right: 2px solid $color-red;
+		margin-top: 6px;
+	}
+}
+
+.c-project--mobileLink {
+	@include media("<medium") {
+		display: relative;
+		display: block;
+		height: 120px;
+	}
+}
 
 .c-project--text {
-	@include media ('>=medium') {
-		background-color: $color-white;
-		min-width: 320px;
-		padding: $pad-triple;
-		position: absolute;
-		right: 0;
-		bottom: 0;
+	background-color: $color-white;
+	min-width: 320px;
+	padding: $pad-triple;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+
+	@include media("<medium") {
+		display: none !important;
 	}
 }
 
@@ -34,20 +76,19 @@
 }
 
 .c-project--hero {
-	height: 140px;
-	position: relative;
-	
-	@include media('>=medium') {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: $space-half;
+	bottom: $space-half;
+	overflow: hidden;
+
+	@include media(">=medium") {
 		height: unset;
-		position: absolute;
-		left: 0;
-		top: 0;
 		right: $space-triple;
 		bottom: $space-triple;
-		overflow: hidden;
-		
 	}
-	
+
 	img {
 		position: absolute;
 		top: 0;
@@ -60,8 +101,4 @@
 
 .c-project--category {
 	color: $color-purple;
-
-	@include media('<medium') {
-		display: none;
-	}
 }
