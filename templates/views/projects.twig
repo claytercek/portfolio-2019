@@ -1,6 +1,20 @@
 {% extends "base.twig" %}
 {% block content %}
-	{% for project in projects %}
-		{% include 'projectBlock.twig' with {'project': project} only %}
-	{% endfor %}
+    <main class="c-project--container">
+        {% set i = 0 %}
+        {% for project in projects %}
+            {% set i = i + 1 %}
+            {% include 'projectBlock.twig' with {
+                'project' : project
+            }
+            only %}
+        {% endfor %}
+    </main>
+    <aside class="c-project--nav">
+        <ul>
+            {% for index in 1..i %}
+                <li></li>
+            {% endfor %}
+        </ul>
+    </aside>
 {% endblock %}

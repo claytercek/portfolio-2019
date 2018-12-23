@@ -1,8 +1,12 @@
-import * as background from "./background";
-const $ = require("jquery");
+var $ = require("jquery");
+var scrollNav = require("./scrollNav");
+var background = require("./background");
 
 $("#wave-toggleMenu").click(function() {
 	background.toggleMenu();
 });
 
-background.init();
+$(document).ready(function() {
+	background.init();
+	scrollNav.init();
+});
