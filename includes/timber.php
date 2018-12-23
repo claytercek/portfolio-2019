@@ -21,7 +21,7 @@ function add_menus_to_context($context)
      */
      function add_to_context($context)
      {
-         $context['nav_main'] = new \Timber\Menu('primary-menu');
+         $context['menu'] = new \Timber\Menu();
          $context['is_front_page'] = is_front_page();
 
          return $context;
