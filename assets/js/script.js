@@ -2,8 +2,10 @@ var $ = require("jquery");
 var scrollNav = require("./scrollNav");
 var background = require("./background");
 
-$("#wave-toggleMenu").click(function() {
+$(".js-wave-toggleMenu").click(function() {
 	background.toggleMenu();
+	this.classList.toggle("open");
+	$(".content")[0].classList.toggle("nav-open");
 });
 
 $(document).ready(function() {

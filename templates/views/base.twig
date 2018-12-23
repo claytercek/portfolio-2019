@@ -11,13 +11,14 @@
 		}}
     </head>
     <body>
-        <button id="wave-toggleMenu">Toggle Menu</button>
+        {% include 'header.twig' %}
+        {# <button id="wave-toggleMenu">Toggle Menu</button> #}
         <canvas class="c-background"></canvas>
         <div class="content">
             {% block content %}
                 Sorry, no content
             {% endblock %}
-            {{ function("wp_footer") }}
         </div>
+        {{ function("wp_footer") }}
     </body>
 </html>

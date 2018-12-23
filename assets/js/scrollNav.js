@@ -77,7 +77,7 @@ function setActive(newItem, isDown) {
 			oldItem.classList.remove("active");
 		}
 		isTransitoning = false;
-	}, 600);
+	}, 700);
 }
 
 // Calls the nextWork function

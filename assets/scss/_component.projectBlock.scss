@@ -13,6 +13,14 @@
 		overflow: hidden;
 	}
 }
+
+.nav-open .c-project {
+	@include media(">=medium"){
+
+		top: 100vh;
+	}
+}
+
 .c-project {
 	display: block;
 	position: relative;
@@ -25,8 +33,8 @@
 		max-height: 670px;
 		top: 50%;
 		left: 50%;
-		transform: translate(calc(-50% - 2rem), -50%);
-
+		transform: translate(calc(-50% - 3rem), -50%);
+		transition: top .7s ease-out;
 		display: none;
 
 		&.active {
@@ -145,7 +153,8 @@
 	position: fixed;
 	z-index: 10;
 	top: 50%;
-	right: $space;
+	right: 0;
+	padding-right: inherit;
 	transform: translateY(-50%);
 
 	ul {
@@ -170,7 +179,7 @@
 			width: $space / 2;
 			right: 0;
 			top: 50%;
-			height: 3px;
+			height: 2px;
 			transition: all 0.3s ease;
 		}
 
@@ -185,7 +194,7 @@
 
 $distances: (
 	"Long": 160vh,
-	"Short": 80vh
+	"Short": 90vh
 );
 
 @each $name, $value in $distances {
