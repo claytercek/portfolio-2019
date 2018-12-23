@@ -14,13 +14,6 @@
 	}
 }
 
-.nav-open .c-project {
-	@include media(">=medium"){
-
-		top: 100vh;
-	}
-}
-
 .c-project {
 	display: block;
 	position: relative;
