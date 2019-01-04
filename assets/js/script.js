@@ -6,6 +6,7 @@ $(".js-wave-toggleMenu").click(function() {
 	background.toggleMenu();
 	this.classList.toggle("open");
 	$(".content")[0].classList.toggle("nav-open");
+	$(".c-header--behind")[0].classList.toggle("nav-open");
 });
 
 $(document).ready(function() {

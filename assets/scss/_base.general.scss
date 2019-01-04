@@ -3,7 +3,7 @@
 }
 
 html {
-	background-color: #25134b;
+	background-color: $color-darkPurple;
 }
 
 img {
@@ -39,7 +39,7 @@ a {
 	max-width: 1440px;
 	position: relative;
 	margin: 0 auto;
-	transition: all .4s ease-out 0.2s;
+	transition: opacity .4s ease-out 0.2s;
 	opacity: 1;
 
 	@include media(">mlarge") {
@@ -48,7 +48,7 @@ a {
 
 	&.nav-open {
 		pointer-events: none !important;
-		transition: all .4s ease-out;
+		transition: opacity .4s ease-out;
 		opacity: 0;
 	}
 }

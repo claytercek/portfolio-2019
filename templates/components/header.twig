@@ -12,11 +12,18 @@
 	</div>
 	<div class="c-header--behind">
 		<nav>
-			<ul class="nav-main">
+			<ul class="c-nav-main">
+				{% set i = 1 %}
 				{% for item in menu.items %}
-					<li class="nav-main-item {{ item.classes|join(' ') }}">
-						<a class="nav-main-link" href="{{ item.link }}">{{ item.title }}</a>
+					<li class="c-nav-main--item {{ item.classes|join(' ') }}">
+
+						<a class="c-nav-main--link" href="{{ item.link }}">
+							<h4 class="c-nav-main--num u-font-beta">{{i}}</h4>
+							<h2 class="u-font-delta">{{ item.title }}</h2>
+							
+						</a>
 					</li>
+				{% set i = i + 1 %}
 				{% endfor %}
 			</ul>
 		</nav>
