@@ -1,8 +1,8 @@
 <?php
 /**
- * Description: Projects page. Displays all projects.
+ * Description: Project page. Displays single project.
  */
 $context = Timber::get_context();
+$context['project'] = new Timber\Post();
 
-$context['projects'] = new Timber\Post();
-Timber::render('single-project.twig', $context);
+Timber::render('singleProject.twig', $context);

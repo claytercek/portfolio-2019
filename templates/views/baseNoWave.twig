@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>{{ wp_title ? wp_title ~ ' | ' }}
+            {{ site.name }}</title>
+        {{
+			function("wp_head")
+		}}
+    </head>
+    <body>
+        {% include 'header.twig' %}
+        <div class="content">
+            {% block content %}
+                Sorry, no content
+            {% endblock %}
+        </div>
+        {{ function("wp_footer") }}
+    </body>
+</html>

@@ -8,6 +8,14 @@ var activeItem;
 var isTransitoning = false;
 
 function init() {
+	asideItems = $(".c-project--nav li");
+	mainItems = $(".c-project");
+	main = $("main");
+
+	if (mainItems.length == 0) {
+		return;
+	}
+
 	$(document).on("wheel", verticalNav);
 	$(document).on("keyup", verticalNav);
 	$(document).swipe({
@@ -19,10 +27,6 @@ function init() {
 		},
 		fallbackToMouseEvents: !1
 	});
-
-	asideItems = $(".c-project--nav li");
-	mainItems = $(".c-project");
-	main = $("main");
 
 	asideItems.each(function(index, item) {
 		item.addEventListener("click", function() {
@@ -49,7 +53,7 @@ function asideClick(index) {
 
 function setNavActive(index) {
 	asideItems.each(function(index, item) {
-		item.classList.remove("active")
+		item.classList.remove("active");
 	});
 	asideItems[index].classList.add("active");
 }

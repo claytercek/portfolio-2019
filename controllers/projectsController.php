@@ -1,11 +1,11 @@
 <?php
 /*
-Template Name: Archives
+Template Name: Project Archive
  */
 
 $args = array(
-	'numberposts' => -1,
-	'post_type'   => 'post'
+    'numberposts' => -1,
+    'post_type' => 'post',
 );
 
 $context = Timber::get_context();

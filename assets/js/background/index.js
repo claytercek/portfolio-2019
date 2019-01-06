@@ -25,6 +25,9 @@ var isMenu = false;
 var c, ctx, cw, ch;
 
 function init() {
+	if (!document.getElementsByClassName("c-background")[0]) {
+		return;
+	}
 	c = document.getElementsByClassName("c-background")[0];
 	ctx = c.getContext("2d");
 	cw = c.width = window.innerWidth;

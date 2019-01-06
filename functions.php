@@ -9,10 +9,11 @@ require_once get_parent_theme_file_path('/vendor/autoload.php');
 
 // Plugins
 require get_parent_theme_file_path('includes/timber.php');
-require get_parent_theme_file_path('includes/acf.php');
 // Theme
 require get_parent_theme_file_path('includes/assets.php');
 require get_parent_theme_file_path('includes/post-types.php');
+
+require get_parent_theme_file_path('includes/blocks.php');
 
 function register_menus()
 {
@@ -20,4 +21,4 @@ function register_menus()
 }
 add_action('init', 'register_menus');
 
-add_theme_support( 'post-thumbnails' ); 
+add_theme_support('post-thumbnails');
