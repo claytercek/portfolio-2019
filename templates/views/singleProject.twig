@@ -1,7 +1,4 @@
 {% extends "baseNoWave.twig" %}
 {% block content %}
-    {% include 'hero.twig' with {
-        'project' : project
-    }
-    only %}
+    {{project.content}}
 {% endblock %}
