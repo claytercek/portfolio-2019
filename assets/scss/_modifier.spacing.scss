@@ -21,6 +21,17 @@
 		}
 	}
 
+	&--mediumHalf {
+		& > * + * {
+			display: block;
+			margin-top: $space;
+
+			@include media("<medium") {
+				margin-top: $space-half;
+			}
+		}
+	}
+
 	&--double {
 		& > * + * {
 			margin-top: $space-double;

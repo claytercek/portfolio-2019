@@ -1,0 +1,62 @@
+.c-hero {
+	width: 100%;
+	height: 100vh;
+	background-color: #fff;
+	display: flex;
+	flex-direction: row-reverse;
+
+	@include media('<medium') {
+		flex-direction: column;
+	}
+
+	&--title {
+		font-family: $font-family-secondary;
+		font-weight: 500;
+		font-size: $font-size-base * 3;
+		line-height: $line-height-base;
+
+		@include media('<medium') {
+			font-size: $font-size-base * 2.5;
+		}
+	}
+
+	&--category {
+		color: $color-purple;
+	}
+
+	&--subtitle {
+		font-family: $font-family-secondary;
+		font-weight: 200;
+		font-size: $font-size-base * 1.8;
+		line-height: $line-height-base;
+		@include media('<medium') {
+			font-size: $font-size-base * 1.4;
+		}
+	}
+
+	&--image {
+		flex-grow: 1;
+		align-self: stretch;
+		flex-basis: 1;
+		overflow: hidden;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&--text {
+		flex-shrink: 1;
+		padding-top: $space;
+		padding-bottom: $space;
+		flex-basis: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+}
+

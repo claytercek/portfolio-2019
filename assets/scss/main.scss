@@ -4,8 +4,8 @@
 @import "normalize";
 @import "include-media";
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700,200");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 
 /*------------------------------------*\
     $CONFIG
@@ -22,7 +22,6 @@ $showMediaQueryPreview: true;
 /*------------------------------------*\
     $LAYOUT
 \*------------------------------------*/
-@import "_layout.grid";
 
 /*------------------------------------*\
     $OBJECTS
@@ -36,6 +35,7 @@ $showMediaQueryPreview: true;
 @import "_component.projectBlock";
 @import "_component.header";
 @import "_component.nav";
+@import "_component.hero";
 
 /*------------------------------------*\
     $MODIFIER
