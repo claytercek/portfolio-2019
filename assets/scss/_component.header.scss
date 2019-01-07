@@ -20,6 +20,7 @@ header {
 
 
 	&--hamburger {
+		filter: drop-shadow(2px 2px  $color-darkPurple);
 		border: $line-width solid $color-red;
 		width: $space-double;
 		height: $space-double;
@@ -99,10 +100,27 @@ header {
 		}
 	}
 
-	&--title {
-		font-family: $font-family-secondary;
-		font-weight: 300;
-		color: $color-white;
+	&--logo {
+		border: $color-white 3px solid;
+		border-right-color: transparent;
+		border-radius: 200px;
+		width: 60px;
+		height: 60px;
+		filter: drop-shadow(2px 2px $color-darkPurple);
+		transition: border-width .2s ease;
+		
+		&:hover {
+			border-width: 20px;
+		}
+		
+		@include media("<medium") {
+			width: 44px;
+			height: 44px;
+
+			&:hover {
+				border-width: 15px;
+			}
+		}
 	}
 
 	

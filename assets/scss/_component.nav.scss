@@ -1,14 +1,13 @@
 .c-header--behind {
 	pointer-events: none;
-	position: absolute;
-	top: $space * 5;
+	position: fixed;
+	top: $space * 6;
 	left: $pad * 2;
 	right: $pad * 2;
 	bottom: 0;
 	z-index: 20;
 	
 	@include media(">=medium") {
-		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
@@ -75,6 +74,7 @@
 		color: $color-red;
 		position: relative;
 		top: .5rem;
+		display: none;
 	}
 
 	&--item:not(:last-child) {
@@ -89,5 +89,6 @@
 	.c-nav-main--link h2::after{
 		width: 100%;
 		left: 0;
+		background: rgba($color-red, .5);
 	}
 }

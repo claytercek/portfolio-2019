@@ -2,7 +2,7 @@ import Wave from "./Wave.js";
 import MenuWave from "./MenuWave.js";
 
 var OPT = {
-	lineColors: ["#FF517F", "#DE467E", "#BD3B7D", "#9C2F7B", "#7C247A", "#66206E", "#501C62", "#3A1756"],
+	lineColors: ['#ac3061','#9b2c5e','#8b285c','#7b2459','#6b2156','#5b1d54','#491a51','#38164e'],
 	BGColor: "#25134b",
 	pointCount: 8,
 	thickness: 5,

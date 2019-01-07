@@ -4,7 +4,7 @@ $line-height-base: 1.5;
 
 // Colors
 $color-white: #ffffff;
-$color-red: #F48;
+$color-red: #ff446d;
 $color-purple: #7C247A;
 $color-darkPurple: #25134b;
 
@@ -21,7 +21,7 @@ $font-family-secondary: 'Lato', Helvetica, sans-serif;
 .u-font {
 	&-alpha {
 		font-family: $font-family-primary;
-		font-weight: 400;
+		font-weight: 600;
 		text-transform: uppercase;
 		font-size: $font-size-base * 0.8;
 		line-height: $line-height-base;

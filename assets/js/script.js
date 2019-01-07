@@ -9,6 +9,7 @@ $(".js-wave-toggleMenu").click(function() {
 	$(".c-header--behind")[0].classList.toggle("nav-open");
 });
 
+
 $(document).ready(function() {
 	background.init();
 	scrollNav.init();
