@@ -1,6 +1,11 @@
 <section class="c-hero">
-	<div class="c-hero--image">
-		<img src="{{ project.thumbnail.src }}" alt="{{ project.title }}"/>
+	<div class="c-hero--imgArea">
+		<div class="c-hero--image" id="img-secondary">
+			<img src="{{ project.thumbnail.src }}" alt="{{ project.title }}"/>
+		</div>
+		<div class="c-hero--image" id="img-primary">
+			<img src="{{ project.thumbnail.src }}" alt="{{ project.title }}"/>
+		</div>
 	</div>
 	<div class="c-hero--text l-mainPadding u-spacing--mediumHalf">
 		<h4 class="c-hero--category u-font-gamma">{{ project.category }}</h4>

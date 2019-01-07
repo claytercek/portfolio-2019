@@ -1,45 +1,76 @@
 .c-hero {
 	width: 100%;
 	height: 100vh;
-	background-color: #fff;
 	display: flex;
 	flex-direction: row-reverse;
-
+	
 	@include media('<medium') {
 		flex-direction: column;
 	}
-
+	
 	&--title {
 		font-family: $font-family-secondary;
 		font-weight: 500;
 		font-size: $font-size-base * 3;
 		line-height: $line-height-base;
-
+		
 		@include media('<medium') {
 			font-size: $font-size-base * 2.5;
 		}
 	}
-
+	
 	&--category {
 		color: $color-purple;
 	}
-
+	
 	&--subtitle {
 		font-family: $font-family-secondary;
 		font-weight: 200;
-		font-size: $font-size-base * 1.8;
+		font-size: $font-size-base * 1.4;
 		line-height: $line-height-base;
-		@include media('<medium') {
-			font-size: $font-size-base * 1.4;
+		@include media('<mlarge') {
+			font-size: $font-size-base * 1.2;
 		}
 	}
-
-	&--image {
+	
+	&--imgArea {
 		flex-grow: 1;
 		align-self: stretch;
 		flex-basis: 1;
+		position: relative;
+	}
+	
+	&--image {
+		position: absolute;
 		overflow: hidden;
+		
+		&#img-secondary {
+			opacity: .7;
+			top: 10%;
+			left: 10%;
+			width: 75%;
+			height: 30%;
 
+			@include media("<mlarge") {
+				left: 5%;
+				top: 5%;
+			}
+		}
+
+		&#img-primary {
+			top: 20%;
+			left: 15%;
+			max-width: 55%;
+			max-height: 70%;
+
+			@include media("<mlarge") {
+				left: 15%;
+				max-width: 80%;
+				top: 15%;
+				max-height: 80%;
+			}
+		}
+		
 		img {
 			display: block;
 			width: 100%;
@@ -47,15 +78,23 @@
 			object-fit: cover;
 		}
 	}
-
+	
 	&--text {
-		flex-shrink: 1;
-		padding-top: $space;
-		padding-bottom: $space;
-		flex-basis: 1;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		background-color: #fff;
+		width: 30vw;
+		min-width: 400px;
+		// padding-top: $space;
+		// padding-bottom: $space;
+
+		@include media("<mlarge") {
+			width: 250px;
+			min-width: 0;
+		}
+
+		@include media("<medium") {
+			width: 100%;
+			padding-top: $pad * 2;
+		}
 	}
 
 }
