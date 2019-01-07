@@ -1,12 +1,17 @@
 .c-background {
+	z-index: -5;
+}
+
+canvas {
 	display: block;
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	position: fixed;
-	z-index: -5;
 	pointer-events: none;
 }
 
-
+.c-menuCanvas {
+	z-index: 9;
+}

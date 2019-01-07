@@ -5,7 +5,7 @@
 		position: relative;
 		height: $space-double;
 		padding: 0 $space-half;
-		border: 1px solid $color-red;
+		border: $line-width solid $color-red;
 		color: $color-red;
 		overflow: hidden;
 

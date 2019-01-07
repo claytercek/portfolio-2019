@@ -107,7 +107,7 @@ export default class Point {
 		this.initialY = this.initialY / ratio.h;
 	}
 
-	toggleMenu(ch) {
+	toggleMenu(ch, dur) {
 		if (this.isMenu == false) {
 			this.isMenu = true;
 			this.initialX = this.x;
@@ -115,7 +115,7 @@ export default class Point {
 			this.targetX = this.x;
 			this.targetY = ch + 200;
 			this.tick = 0;
-			this.duration = rand(60, 30);
+			this.duration = rand(dur.min, dur.max);
 		} else {
 			this.isMenu = false;
 			this.initialX = this.x;

@@ -78,7 +78,10 @@ export default class Wave {
 
 	toggleMenu(ch) {
 		for (var i = 0; i < this.points.length; i++) {
-			this.points[i].toggleMenu(ch);
+			this.points[i].toggleMenu(ch, {
+				min: 30,
+				max: 60
+			});
 		}
 	}
 }
