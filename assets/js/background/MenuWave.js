@@ -3,7 +3,7 @@ import Wave from "./Wave.js";
 
 export default class MenuWave extends Wave {
 	constructor(config, ctx, cw, ch, color) {
-		super(config, ctx, cw, ch, 1.2, color)
+		super(config, ctx, cw, ch, 1.1, color)
 	}
 
 	renderShape() {
@@ -28,7 +28,7 @@ export default class MenuWave extends Wave {
 	toggleMenu(ch) {
 		for (var i = 0; i < this.points.length; i++) {
 			this.points[i].toggleMenu(ch, {
-				min: 70,
+				min: 40,
 				max:70
 			});
 		}

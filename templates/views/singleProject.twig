@@ -1,5 +1,10 @@
 {% extends "baseWave.twig" %}
 {% block content %}
-	{% include 'hero.twig' with { 'project': project } %}
-	{{project.content}}
+	<main>
+		{% include 'hero.twig' with { 'project': project } %}
+		{% include 'projectInfo.twig' with {'info': project.meta('info')} %}
+		<section class="c-projectContent">
+			{{project.content}}
+		</section>
+	</main>
 {% endblock %}
