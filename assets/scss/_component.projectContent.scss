@@ -1,3 +1,141 @@
 .c-projectContent {
 	background-color: $color-white;
+
+	font-family: $font-family-secondary;
+	font-weight: 200;
+	font-size: $font-size-base * 1.2;
+	line-height: $line-height-base;
+
+	> * {
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		max-width: $content-maxWidth;
+
+		& + * {
+			padding-top: $space-double;
+		}
+		
+		&:first-child {
+			padding-top: $pad-large;
+			@include media("<mlarge") {
+				padding-top: $pad;
+			}
+	
+		}
+	}
+
+	p, h1, h2, h3, h4, h5, h6, {
+		padding-left: $pad-large;
+		padding-right: $pad-large;
+		@include media("<mlarge") {
+			padding-left: $pad;
+			padding-right: $pad;
+		}
+	}
+
+	h1, h2, {
+		padding-top: $space-triple;
+
+		+ * {
+			padding-top: $space;
+		}
+	}
+
+	p {
+
+		& + p {
+			padding-top: $space;
+		}
+		
+	}
+
+
+	ol, ul {
+		padding-left: $pad-large + $space-double;
+		padding-right: $pad-large + $space-double;
+		@include media("<mlarge") {
+			padding-left: $pad + $space;
+			padding-right: $pad + $space;
+		}
+
+		li + li {
+			margin-top: $space-half;
+		}
+	}
+
+	ul {
+		list-style-type: none;
+
+		li::before {
+			content: "- "
+		}
+	}
+
+	ol {
+		list-style-type: decimal-leading-zero;
+	}
+
+	a {
+		position: relative;
+		color: $color-red;
+		font-weight: 400;
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: 0;
+			bottom: 1px;
+			height: 1px;
+			display: block;
+			right: 0;
+			background: $color-red;
+			transition: width .2s ease;
+		}
+		
+		&:hover:after {
+			width: 100%;
+			left: 0;
+		}
+	}
+
+	.wp-block-gallery {
+		padding: $space-triple;
+		margin-left: 0;
+		margin-right: 0;
+		max-width: 100%;
+		background-color: $color-darkPurple;
+		height: 80vh;
+		display: block;
+
+		margin-top: $space-double;
+		@include media("<mlarge") {
+			margin-top: $space;
+		}
+
+		overflow-x: auto;
+		white-space:nowrap;
+
+		li.blocks-gallery-item {
+			flex-grow: 0;
+			margin: 0;
+			width: unset;
+			height: 100%;
+			margin-right: $space-double;
+			
+			&::before {
+				content: "";
+			}
+		}
+		
+		li.blocks-gallery-item, figure, img {
+			display: inline-block !important;
+		}
+		
+		img {
+			height: 100%;
+			box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+		}
+	}
+
 }

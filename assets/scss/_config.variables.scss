@@ -51,6 +51,14 @@ $font-family-secondary: 'Lato', Helvetica, sans-serif;
 		line-height: $line-height-base;
 		letter-spacing: 2px;
 	}
+	
+	&-epsilon {
+		font-family: $font-family-secondary;
+		font-weight: 400;
+		font-size: $font-size-base * 1.2;
+		line-height: $line-height-base;
+		letter-spacing: 2px;
+	}
 }
 
 /**
@@ -65,6 +73,7 @@ $space-double: $space * 2;
 $space-triple: $space * 3;
 $space-quad: $space * 4;
 $pad: 16px;
+$pad-large: $pad * 4;
 $pad-half: $pad/2;
 $pad-and-half: $pad * 1.5;
 $pad-double: $pad * 2;
@@ -73,3 +82,5 @@ $gutter: 50px;
 
 
 $line-width: 2px;
+
+$content-maxWidth: 800px;

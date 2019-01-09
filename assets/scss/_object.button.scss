@@ -1,32 +1,47 @@
-.o-button {
-	button {
-		background-color: transparent;
-		cursor: pointer;
-		position: relative;
-		height: $space-double;
-		padding: 0 $space-half;
-		border: $line-width solid $color-red;
-		color: $color-red;
-		overflow: hidden;
 
-		&:after {
-			content: " ";
-			position: absolute;
-			left: 0;
-			top: 100%;
-			width: 100%;
-			height: 100%;
-			background-color: $color-red;
-			transition: all 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95);
-		}
+.o-button button, .wp-block-button__link {
+	background-color: transparent;
+	cursor: pointer;
+	position: relative;
+	padding: $space-half;
+	border: $line-width solid $color-red;
+	color: $color-red;
+	overflow: hidden;
 
-		&:hover:after {
-			top: -100%;
-		}
-
-		&:active {
-			color: $color-white;
-			background-color: $color-red;
-		}
+	&:after {
+		content: " ";
+		position: absolute;
+		left: 0;
+		top: 100%;
+		width: 100%;
+		height: 100%;
+		background-color: $color-red;
+		transition: all 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95);
 	}
+	
+	&:hover {
+		color: $color-red;
+	}
+
+	&:hover:after {
+		top: -100%;
+	}
+
+	&:active {
+		color: $color-white;
+		background-color: $color-red;
+	}
+}
+
+
+.wp-block-button__link {
+	border-radius: 0;
+	font-size: unset;
+
+	font-family: $font-family-primary;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: $font-size-base * 0.8;
+	line-height: $line-height-base;
+	letter-spacing: 2px;
 }

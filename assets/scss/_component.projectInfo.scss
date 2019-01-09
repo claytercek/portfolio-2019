@@ -1,16 +1,39 @@
 .c-projectInfo {
 	background-color: $color-red;
-
+	max-width: unset;
 	color: $color-white;
 	display: flex;
 	align-items: baseline;
+	justify-content: center;
 
+	
 	> * {
-		width: 25%;
+		max-width: 240px;
+
+		margin-right: 6vw;
+
+		&:last-child {
+			margin-right: 0;
+		}
 	}
+	
+	@include media("<medium") {
+		flex-direction: column;
+		
+		> * {
+			max-width: 100%;
+			margin-right: 0;
 
+			margin-top: $pad;
+
+			&:last-child {
+				margin-bottom: $pad;
+			}
+		}
+	}
+	
 	&--label {
-
+		color: $color-darkPurple
 	}
 	
 	&--info {

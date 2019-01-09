@@ -40,11 +40,11 @@ function cp_change_post_object()
     $labels = $get_post_type->labels;
     $labels->name = 'Projects';
     $labels->singular_name = 'Project';
-    $labels->add_new = 'Add Projects';
-    $labels->add_new_item = 'Add Projects';
-    $labels->edit_item = 'Edit Projects';
-    $labels->new_item = 'Projects';
-    $labels->view_item = 'View Projects';
+    $labels->add_new = 'Add Project';
+    $labels->add_new_item = 'Add Project';
+    $labels->edit_item = 'Edit Project';
+    $labels->new_item = 'Project';
+    $labels->view_item = 'View Project';
     $labels->search_items = 'Search Projects';
     $labels->not_found = 'No Projects found';
     $labels->not_found_in_trash = 'No Projects found in Trash';
