@@ -68,6 +68,7 @@
 				max-width: 80%;
 				top: 15%;
 				max-height: 80%;
+				min-height: 400px;
 			}
 		}
 		
@@ -95,6 +96,22 @@
 			width: 100%;
 			padding-top: $pad * 2;
 		}
+	}
+
+	&--buttons {
+		padding-top: $space;
+
+		@include media("<medium") {
+			display: flex !important;
+			
+			a + a {
+				margin-top: 0;
+				margin-left: $space;
+			}
+		
+		}
+
+
 	}
 
 }
