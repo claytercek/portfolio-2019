@@ -16,7 +16,8 @@
 			{% for item in project.meta("buttons") %}
 				{% include 'button.twig' with {
 					'text' : item.label,
-					'link' : item.url
+					'link' : item.url,
+					'newTab' : true
 				}
 				only %}
 			{% endfor %}
