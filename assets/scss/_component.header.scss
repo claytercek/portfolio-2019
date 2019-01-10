@@ -16,6 +16,11 @@ header {
 		@include media(">mlarge") {
 			padding: $pad * 4;
 		}
+		pointer-events: none;
+
+		> * {
+			pointer-events: all;
+		}
 	}
 
 

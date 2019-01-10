@@ -26,11 +26,10 @@ https://flickity.metafizzy.co
   
   .flickity-enabled.is-draggable {
 	-webkit-tap-highlight-color: transparent;
-			tap-highlight-color: transparent;
 	-webkit-user-select: none;
-	   -moz-user-select: none;
-		-ms-user-select: none;
-			user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
   }
   
   .flickity-enabled.is-draggable .flickity-viewport {

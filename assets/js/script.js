@@ -20,12 +20,12 @@ $(document).ready(function() {
 		// options
 		cellAlign: 'left',
 		contain: false,
-		// disable previous & next buttons and dots
 		prevNextButtons: false,
 		pageDots: true,
 		imagesLoaded: true,
 		cellSelector: 'figure',
-		setGallerySize: false
+		setGallerySize: false,
+		freeScroll: true
 	});
 	
 	$(".blocks-gallery-item").remove();
