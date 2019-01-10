@@ -100,46 +100,41 @@
 	}
 
 	.wp-block-gallery {
-		padding: $space-triple;
+		padding:  $space-triple 0 $space-quad 0 ;
 		margin-left: 0;
 		margin-right: 0;
 		max-width: 100%;
 		background-color: $color-darkPurple;
 		height: 80vh;
 		display: block;
+		position: relative;
+
+		display: flex;
+		flex-flow: row nowrap;
 
 		margin-top: $space-double;
 		@include media("<mlarge") {
 			margin-top: $space;
 		}
 
-		overflow-x: auto;
+		overflow: hidden;
 		white-space:nowrap;
 
 		li.blocks-gallery-item {
-			flex-grow: 0;
-			margin: 0;
-			width: unset;
-			height: 100%;
-			margin-right: $space-double;
+			display: none;
 
-			&:last-child {
-				margin-right: $space-triple;
-			}
-			
-			&::before {
-				content: "";
-			}
 		}
-		
-		li.blocks-gallery-item, figure, img {
-			display: inline-block !important;
+
+		figure {
+			height: 100%;
 		}
 		
 		img {
 			height: 100%;
 			max-width: unset;
 			box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+			display: block;
+			margin-right: $space-double;
 		}
 	}
 

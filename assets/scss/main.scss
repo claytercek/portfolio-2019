@@ -8,11 +8,14 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 
 /*------------------------------------*\
-    $CONFIG
+$CONFIG
 \*------------------------------------*/
 $showMediaQueryPreview: true;
 @import "_config.variables";
 @import "_config.breakpoints";
+
+
+@import "_vendor.flickity";
 
 /*------------------------------------*\
     $BASE
@@ -44,3 +47,5 @@ $showMediaQueryPreview: true;
 \*------------------------------------*/
 @import "_modifier.spacing";
 @import "_modifier.utility";
+
+
