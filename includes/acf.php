@@ -32,3 +32,6 @@ add_filter('acf/settings/dir', 'acf_settings_dir');
 
 // Include ACF Plugin
 include_once get_stylesheet_directory() . '/plugins/acf/acf.php';
+
+// Include ACF Options Plugin
+include_once get_stylesheet_directory() . '/plugins/acf-options-page/acf-options-page.php';
