@@ -6,7 +6,6 @@
 	align-items: baseline;
 	justify-content: center;
 
-	
 	> * {
 		max-width: 240px;
 
@@ -16,10 +15,10 @@
 			margin-right: 0;
 		}
 	}
-	
+
 	@include media("<medium") {
 		flex-direction: column;
-		
+
 		> * {
 			max-width: 100%;
 			margin-right: 0;
@@ -31,12 +30,46 @@
 			}
 		}
 	}
-	
-	&--label {
-		color: $color-darkPurple
-	}
-	
-	&--info {
 
+	&--label {
+		color: $color-darkPurple;
+	}
+
+	&--buttons {
+	
+		width: 100%;
+		padding-top: $space;
+		display: flex;
+		@include media(">=medium") {
+			display: none;
+		}
+	
+		> * {
+			flex-grow: 1;
+		}
+		> * + * {
+			margin-left: $space-half;
+		}
+
+
+		button {
+			width: 100%;
+
+			border-color: $color-white;
+			color: $color-white;
+
+			&::after {
+				background: $color-white;
+			}
+
+			&:hover {
+				color: $color-white;
+			}
+
+			&:active {
+				color: $color-red;
+				background-color: $color-white;
+			}
+		}
 	}
 }

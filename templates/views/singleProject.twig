@@ -2,7 +2,7 @@
 {% block content %}
 	<main>
 		{% include 'hero.twig' with { 'project': project } %}
-		{% include 'projectInfo.twig' with {'info': project.meta('info')} %}
+		{% include 'projectInfo.twig' with {'info': project.meta('info'), 'buttons' : project.meta('buttons')} %}
 		<section class="c-projectContent">
 			{{project.content}}
 		</section>

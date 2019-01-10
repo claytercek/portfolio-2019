@@ -122,6 +122,10 @@
 			width: unset;
 			height: 100%;
 			margin-right: $space-double;
+
+			&:last-child {
+				margin-right: $space-triple;
+			}
 			
 			&::before {
 				content: "";
@@ -134,6 +138,7 @@
 		
 		img {
 			height: 100%;
+			max-width: unset;
 			box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
 		}
 	}

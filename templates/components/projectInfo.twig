@@ -1,14 +1,23 @@
 <section class="c-projectInfo l-mainPadding">
-		<div class="c-projectInfo--item">
-			<h3 class="c-projectInfo--label u-font-alpha">deliverables</h3>
-			<p class="c-projectInfo--info u-font-epsilon">{{info.deliverables}}</p>
-		</div>
-		<div class="c-projectInfo--item">
-			<h3 class="c-projectInfo--label u-font-alpha">context</h3>
-			<p class="c-projectInfo--info u-font-epsilon">{{info.context}}</p>
-		</div>
-		<div class="c-projectInfo--item">
-			<h3 class="c-projectInfo--label u-font-alpha">date</h3>
-			<p class="c-projectInfo--info u-font-epsilon">{{info.date}}</p>
-		</div>
+	<div class="c-projectInfo--item">
+		<h3 class="c-projectInfo--label u-font-alpha">deliverables</h3>
+		<p class="c-projectInfo--info u-font-epsilon">{{info.deliverables}}</p>
+	</div>
+	<div class="c-projectInfo--item">
+		<h3 class="c-projectInfo--label u-font-alpha">context</h3>
+		<p class="c-projectInfo--info u-font-epsilon">{{info.context}}</p>
+	</div>
+	<div class="c-projectInfo--item">
+		<h3 class="c-projectInfo--label u-font-alpha">date</h3>
+		<p class="c-projectInfo--info u-font-epsilon">{{info.date}}</p>
+	</div>
+	<div class="c-projectInfo--buttons">
+		{% for item in buttons %}
+			{% include 'button.twig' with {
+				'text' : item.label,
+				'link' : item.url
+			}
+			only %}
+		{% endfor %}
+	</div>
 </section>

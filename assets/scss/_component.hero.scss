@@ -102,7 +102,7 @@
 		padding-top: $space;
 
 		@include media("<medium") {
-			display: flex !important;
+			display: none !important;
 			
 			a + a {
 				margin-top: 0;
