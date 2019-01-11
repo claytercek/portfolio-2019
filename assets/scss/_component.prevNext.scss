@@ -1,0 +1,80 @@
+.c-prevNext {
+	background-color: $color-darkPurple;
+	display: flex;
+
+	color: $color-white;
+
+	> * {
+		max-width: unset;
+		flex-grow: 1;
+		width: 50%;
+		overflow: hidden;
+		display: flex;
+
+		align-items: center;
+
+		> .text {
+			flex-grow: 1;
+		}
+
+		&::after {
+			top: 0;
+			left: 0;
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: $color-purple;
+			opacity: .5;
+			z-index: 0;
+			transition: left .5s ease;
+		}
+
+		* {
+			position: relative;
+			z-index: 1;
+		}
+
+		h3 {
+			font-weight: 600;
+		}
+	}
+
+	&--next {
+		
+		&::after {
+			left: 100%;
+		}
+
+		&:hover::after {
+			left: 0;
+		}
+	}
+	
+	&--prev {
+
+		text-align: right;
+		
+		&::after {
+			left: -100%;
+		}
+
+		&:hover::after {
+			left: 0;
+		}
+	}
+
+
+	.arrow {
+		width: $space;
+		height: $space;
+		border-left: $color-red $line-width solid;
+		border-top: $color-red $line-width solid;
+
+		transform: rotate(-45deg);
+
+		&:last-child {
+			transform: rotate(135deg);
+		}
+	}
+}

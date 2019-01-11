@@ -6,5 +6,6 @@
 		<section class="c-projectContent">
 			{{project.content}}
 		</section>
+		{% include 'prevNext.twig' with {'next': project.next, 'prev' : project.prev} only %}
 	</main>
 {% endblock %}
