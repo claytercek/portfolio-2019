@@ -43,24 +43,29 @@
 	&--image {
 		position: absolute;
 		overflow: hidden;
+
+		img {
+			box-shadow: 5px 5px 30px rgba(0,0,0,.5);
+		}
 		
 		&#img-secondary {
 			opacity: .7;
 			top: 10%;
 			left: 10%;
-			width: 75%;
+			width: 70%;
 			height: 30%;
 
 			@include media("<mlarge") {
 				left: 5%;
 				top: 5%;
+				width: 75%;
 			}
 		}
 
 		&#img-primary {
 			top: 20%;
-			left: 15%;
-			max-width: 55%;
+			left: 20%;
+			max-width: 70%;
 			max-height: 70%;
 
 			@include media("<mlarge") {

@@ -15,18 +15,19 @@ $(document).ready(function() {
 	background.init();
 	scrollNav.init();
 
-	
-	var flkty = new Flickity( ".wp-block-gallery", {
-		// options
-		cellAlign: 'left',
-		contain: false,
-		prevNextButtons: false,
-		pageDots: true,
-		imagesLoaded: true,
-		cellSelector: 'figure',
-		setGallerySize: false,
-		freeScroll: true
-	});
-	
-	$(".blocks-gallery-item").remove();
+	$(".wp-block-gallery").each(function() {
+
+		var flkty = new Flickity( this, {
+			cellAlign: 'left',
+			contain: false,
+			prevNextButtons: false,
+			pageDots: true,
+			imagesLoaded: true,
+			cellSelector: 'figure',
+			setGallerySize: false,
+			freeScroll: true
+		});
+		
+		$(".blocks-gallery-item").remove();
+	})
 });

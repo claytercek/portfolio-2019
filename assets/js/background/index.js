@@ -71,10 +71,10 @@ var clear = function() {
 
 var loop = function() {
 	window.requestAnimFrame(loop, c);
+	clear();
 	
 	if (window.pageYOffset < window.innerHeight) {
 		tick++;
-		clear();
 		for (var wave of waves) {
 			wave.update();
 		}

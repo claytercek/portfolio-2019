@@ -23,6 +23,13 @@
 			}
 	
 		}
+
+		&:last-child {
+			padding-bottom: $pad-large;
+			@include media("<mlarge") {
+				padding-bottom: $pad;
+			}
+		}
 	}
 
 	p, h1, h2, h3, h4, h5, h6, {
@@ -100,6 +107,11 @@
 	}
 
 	.wp-block-gallery {
+
+		&:first-child {
+			margin-top: 0 !important;
+		}
+
 		padding:  $space-triple 0 $space-quad 0 ;
 		margin-left: 0;
 		margin-right: 0;
@@ -115,6 +127,8 @@
 		margin-top: $space-double;
 		@include media("<mlarge") {
 			margin-top: $space;
+
+			padding:  $pad-double 0 $space-quad 0 ;
 		}
 
 		overflow: hidden;
@@ -132,7 +146,7 @@
 		img {
 			height: 100%;
 			max-width: unset;
-			box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+			box-shadow: 5px 5px 20px rgba(0,0,0,0.5);
 			display: block;
 			margin-right: $space-double;
 		}
