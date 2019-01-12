@@ -27,6 +27,17 @@
 				{% set i = i + 1 %}
 				{% endfor %}
 			</ul>
+			<ul class="c-nav-secondary">
+				{% for item in menuSecondary.items %}
+					<li class="c-nav-secondary--item {{ item.classes|join(' ') }}">
+
+						<a class="c-nav-secondary--link" href="{{ item.link }}">
+							<h2 class="u-font-delta">{{ item.title }}</h2>
+							
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
 		</nav>
 	</div>
 </header>

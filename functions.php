@@ -14,6 +14,7 @@ require get_parent_theme_file_path('includes/acf.php');
 // Theme
 require get_parent_theme_file_path('includes/assets.php');
 require get_parent_theme_file_path('includes/post-types.php');
+require get_parent_theme_file_path('includes/forms.php');
 
 function register_menus()
 {

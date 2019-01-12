@@ -1,0 +1,61 @@
+.c-form {
+	&.success {
+		> * {
+			transform: translateY(3rem);
+			opacity: 0;
+
+		}
+		.successMessage {
+			opacity: 1 ;
+			transform: translateY(0) ;
+		}
+	}
+
+	max-width: 400px;
+	width: 60vw;
+	position: relative;
+
+	> * {
+		display: block;
+		width: 100%;
+		transform: translateY(0);
+		opacity: 1;
+		transition: all .5s ease;
+	}
+
+	.successMessage {
+		opacity: 0;
+		transform: translateY(-3rem);
+		position: absolute;
+	}
+	
+	label:not(:first-of-type), input[type="submit"] {
+		margin-top: $space;
+	}
+
+	input, textarea {
+		color: white;
+		background-color: transparent;
+		border: $line-width solid $color-blue;
+		padding: $pad / 2 ;
+		margin-top: $space / 3;
+	}
+	
+	input:not([type="submit"]), textarea {
+		font-size: $font-size-base;
+
+	}
+
+	input[type="submit"] {
+		cursor: pointer;
+		&:hover {
+			background-color: $color-blue;
+		}
+
+		&:active {
+			background-color: $color-white;
+			color: $color-blue;
+			border-color: $color-white;
+		}
+	}
+}

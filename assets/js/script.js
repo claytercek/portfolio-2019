@@ -2,6 +2,7 @@ var $ = require("jquery");
 var scrollNav = require("./scrollNav");
 var background = require("./background");
 var Flickity = require("flickity");
+var form = require("./form");
 
 $(".js-wave-toggleMenu").click(function() {
 	background.toggleMenu();
@@ -14,6 +15,7 @@ $(".js-wave-toggleMenu").click(function() {
 $(document).ready(function() {
 	background.init();
 	scrollNav.init();
+	form.init();
 
 	$(".wp-block-gallery").each(function() {
 
