@@ -18,6 +18,8 @@ require get_parent_theme_file_path('includes/post-types.php');
 function register_menus()
 {
     register_nav_menu('primary-menu', __('Main Menu'));
+    register_nav_menu('secondary-menu', __('Secondary Menu'));
+    register_nav_menu('social-menu', __('Social Links'));
 }
 add_action('init', 'register_menus');
 

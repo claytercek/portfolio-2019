@@ -1,6 +1,13 @@
 {% extends "baseWave.twig" %}
 {% block content %}
-	<main class="c-AboutText">
-		{{post.content}}
+	<main class="c-about  u-font-beta l-headerPadding">
+		<div class="text u-spacing--half">
+			{{post.content}}
+		</div>
+		<ul class="social">
+			{% for item in menuSocial.items %}
+			<li><a href="{{item.url}}">{{item.title}}</a></li>
+			{% endfor %}
+		</ul>
 	</main>
 {% endblock %}
