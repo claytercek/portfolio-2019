@@ -12,8 +12,11 @@
 	}
 
 	max-width: 400px;
-	width: 60vw;
+	width: 40vw;
 	position: relative;
+	@include media("<medium") {
+		width: 100%;
+	}
 
 	> * {
 		display: block;

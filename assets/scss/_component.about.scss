@@ -23,15 +23,22 @@
 		max-width: 500px;
 		padding-left: $pad * 2;
 		border-left: 3px solid $color-red;
-		@include media(">=medium") {
-		
+		@include media("<medium") {
+			padding-left: $pad;
 		}
 		strong {
 			color: $color-blue;
 		}
 	}
-
+	
 	.social {
+		@include media("<medium") {
+			border-left: 3px solid $color-red;
+			padding-left: $pad;
+			text-align: left;
+			padding-top: $space * 2;
+		}
+
 		padding-right: $pad * 2;
 		list-style-type: none;
 		text-align: right;
