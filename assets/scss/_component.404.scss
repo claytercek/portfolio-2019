@@ -1,0 +1,32 @@
+.c-404 {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	transform: translateY(-50%);
+	text-align: center;
+	padding: $pad;
+	h2 {
+		color: white;
+		font-family: $font-family-secondary;
+		font-weight: 700;
+		font-size: $font-size-base * 3.8;
+		line-height: $line-height-base;
+		letter-spacing: 2px;
+		display: block;
+
+		@include media("<medium") {
+			font-size: $font-size-base * 2;
+		}
+	}
+
+	h4 {
+		color: white;
+		font-family: $font-family-primary;
+		font-weight: 400;
+		font-size: $font-size-base * 1.1;
+		line-height: $line-height-base;
+		letter-spacing: 2px;
+		display: block;
+	}
+}
