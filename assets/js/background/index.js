@@ -100,8 +100,8 @@ var resize = function() {
 	let oldCw = cw;
 	let oldCh = ch;
 
-	cw = c.width = window.innerWidth;
-	ch = c.height = window.innerHeight;
+	cw = c.width = c2.width = window.innerWidth;
+	ch = c.height = c2.height = window.innerHeight;
 
 	var ratio = {
 		w: oldCw / cw,
