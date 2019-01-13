@@ -18,7 +18,7 @@
 				{% for item in menuPrimary.items %}
 					<li class="c-nav-main--item {{ item.classes|join(' ') }}">
 
-						<a class="c-nav-main--link" href="{{ item.link }}">
+						<a class="c-nav-main--link" target="{{ item.target }}" href="{{ item.link }}">
 							<h4 class="c-nav-main--num u-font-beta">{{i}}</h4>
 							<h2 class="u-font-delta">{{ item.title }}</h2>
 							
@@ -31,7 +31,7 @@
 				{% for item in menuSecondary.items %}
 					<li class="c-nav-secondary--item {{ item.classes|join(' ') }}">
 
-						<a class="c-nav-secondary--link" href="{{ item.link }}">
+						<a class="c-nav-secondary--link" target="{{ item.target }}" href="{{ item.link }}">
 							<h2 class="u-font-delta">{{ item.title }}</h2>
 							
 						</a>
