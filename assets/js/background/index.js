@@ -37,7 +37,8 @@ function init() {
 	c2 = document.getElementsByClassName("c-menuCanvas")[0];
 	ctx2 = c2.getContext("2d");
 	cw = c2.width = c.width = window.innerWidth;
-	ch = c2.height = c.height = window.innerHeight;
+	ch = c2.height =  window.innerHeight;
+	c.height = window.innerHeight ;
 
 	OPT.range = {
 		x: cw * 0.05,
@@ -61,6 +62,9 @@ function init() {
 
 	window.addEventListener("resize", resize, false);
 
+	window.scrollTo(0, 0);
+	resize();
+		
 	loop();
 }
 

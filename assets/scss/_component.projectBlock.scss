@@ -97,6 +97,7 @@
 	position: absolute;
 	right: 0;
 	bottom: 0;
+	box-shadow: 5px 5px 20px rgba(0,0,0,.3);
 
 	@include media("<medium") {
 		display: none !important;
@@ -117,6 +118,7 @@
 	right: $space-half;
 	bottom: $space-half;
 	overflow: hidden;
+	box-shadow: 5px 5px 20px rgba(0,0,0,.3);
 
 	@include media(">=medium") {
 		height: unset;
