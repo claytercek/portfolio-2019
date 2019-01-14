@@ -697,6 +697,66 @@ a {
   line-height: 1.5;
   letter-spacing: 2px; }
 
+.o-scrollIcon {
+  display: block;
+  position: fixed;
+  bottom: calc(5vh - 60px);
+  height: 160px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  cursor: pointer;
+  fill: #ffffff; }
+  @media (max-width: 31.24em) {
+    .o-scrollIcon {
+      display: none; } }
+  .o-scrollIcon #wheel {
+    -webkit-animation: downOut 2s ease infinite;
+            animation: downOut 2s ease infinite; }
+  .o-scrollIcon #arrow {
+    -webkit-animation: blink 1s ease infinite alternate;
+            animation: blink 1s ease infinite alternate; }
+
+@-webkit-keyframes downOut {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  10% {
+    opacity: 1; }
+  70% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(6%);
+            transform: translateY(6%); } }
+
+@keyframes downOut {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  10% {
+    opacity: 1; }
+  70% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(6%);
+            transform: translateY(6%); } }
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
 /*------------------------------------*\
     $COMPONENTS
 \*------------------------------------*/

@@ -7,5 +7,6 @@
 			{{project.content}}
 		</section>
 		{% include 'prevNext.twig' with {'next': project.next, 'prev' : project.prev} only %}
+		{% include 'scrollIcon.twig' %}
 	</main>
 {% endblock %}

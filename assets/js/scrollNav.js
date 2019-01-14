@@ -12,6 +12,12 @@ function init() {
 	mainItems = $(".c-project");
 	main = $("main");
 
+	$(document).on("wheel", function(event){
+		if(event.originalEvent.deltaY > 0) {
+			$(".o-scrollIcon").fadeOut(200);
+		}
+	});
+
 	if (asideItems.length == 0) {
 		return;
 	}
@@ -33,6 +39,13 @@ function init() {
 			asideClick(index);
 		});
 	});
+
+	$(".o-scrollIcon").on("click",function(){
+		verticalNav({
+			type: "arrow",
+			direction: "down"
+		})
+	})
 
 	setActive(mainItems[0], true);
 }
@@ -104,15 +117,16 @@ function verticalNav(e) {
 	} else if (e.type == "swipe") {
 		if (e.direction == "up") down = true;
 		else if (e.direction == "down") down = false;
-		// } else if (e.type == "arrow") {
-		// 	if (e.direction == "up") down = false;
-		// 	else if (e.direction == "down") down = true;
+		} else if (e.type == "arrow") {
+			if (e.direction == "up") down = false;
+			else if (e.direction == "down") down = true;
 	}
 
 	if (down == null) return;
 
 	if (down) {
 		nextItem(true);
+		$(".o-scrollIcon").fadeOut();
 	} else {
 		nextItem(false);
 	}

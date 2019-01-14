@@ -1,0 +1,35 @@
+.o-scrollIcon {
+	@include media("<medium") {
+		display:none;
+	}
+
+	display:block;
+	position: fixed;
+	bottom: calc(5vh - 60px);
+	height: 160px;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: pointer;
+	fill: $color-white;
+
+	#wheel {
+		animation: downOut 2s ease infinite;
+	}
+	
+	#arrow {
+		animation: blink 1s ease infinite alternate;
+	}
+
+}
+
+@keyframes downOut {
+	0% { opacity: 0; transform: translateY(0)}
+	10% {opacity: 1}
+	70% {opacity: 1; }
+	100% { opacity: 0; transform: translateY(6%)}
+  } 
+
+  @keyframes blink {
+	0% {opacity: 1}
+	100% { opacity: 0;}
+  } 
