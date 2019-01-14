@@ -1,5 +1,6 @@
 import Wave from "./Wave.js";
 import MenuWave from "./MenuWave.js";
+$ = require("jQuery");
 
 var OPT = {
 	lineColors: ['#ac3061','#9b2c5e','#8b285c','#7b2459','#6b2156','#5b1d54','#491a51','#38164e'],
@@ -37,8 +38,8 @@ function init() {
 	c2 = document.getElementsByClassName("c-menuCanvas")[0];
 	ctx2 = c2.getContext("2d");
 	cw = c2.width = c.width = window.innerWidth;
-	ch = c2.height =  window.innerHeight;
-	c.height = window.innerHeight ;
+	ch =  c.height = window.innerHeight;
+	c2.height = window.innerHeight + 100; //Mobile fix
 
 	OPT.range = {
 		x: cw * 0.05,
@@ -61,16 +62,13 @@ function init() {
 	ctx2.strokeStyle = OPT.strokeColor;
 
 	window.addEventListener("resize", resize, false);
-
-	window.scrollTo(0, 0);
-	resize();
 		
 	loop();
 }
 
 var clear = function() {
 	ctx.clearRect(0, 0, cw, ch);
-	ctx2.clearRect(0, 0, cw, ch);
+	ctx2.clearRect(0, 0, cw, ch + 100);
 };
 
 var loop = function() {
@@ -105,7 +103,8 @@ var resize = function() {
 	let oldCh = ch;
 
 	cw = c.width = c2.width = window.innerWidth;
-	ch = c.height = c2.height = window.innerHeight;
+	ch = c.height = window.innerHeight;
+	c2.height = window.innerHeight + 100; //Mobile fix
 
 	var ratio = {
 		w: oldCw / cw,
