@@ -458,96 +458,6 @@ $CONFIG
 /**
  * Default Spacing/Padding
  */
-body:before {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  z-index: 100000;
-  display: block;
-  padding: 0.5em 1em;
-  color: rgba(255, 255, 255, 0.75);
-  content: "No Media Query";
-  font-size: 0.75em;
-  background: black;
-  border-top-left-radius: 10px; }
-  @media print {
-    body:before {
-      display: none; } }
-
-body:after {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 99999;
-  display: block;
-  height: 5px;
-  content: "";
-  background: black; }
-  @media print {
-    body:after {
-      display: none; } }
-
-@media (min-width: 18.76em) {
-  body:before {
-    content: "xsmall: 300px"; }
-  body:after, body:before {
-    background: dodgerblue; } }
-
-@media (min-width: 25.01em) {
-  body:before {
-    content: "small: 400px"; }
-  body:after, body:before {
-    background: darkseagreen; } }
-
-@media (min-width: 31.26em) {
-  body:before {
-    content: "medium: 500px"; }
-  body:after, body:before {
-    background: lightcoral; } }
-
-@media (min-width: 59.385em) {
-  body:before {
-    content: "tablet: 768px"; }
-  body:after, body:before {
-    background: mediumvioletred; } }
-
-@media (min-width: 53.135em) {
-  body:before {
-    content: "mlarge: 850px"; }
-  body:after, body:before {
-    background: green; } }
-
-@media (min-width: 59.385em) {
-  body:before {
-    content: "xlarge: 950px"; }
-  body:after, body:before {
-    background: hotpink; } }
-
-@media (min-width: 64.01em) {
-  body:before {
-    content: "xxlarge: 1024px"; }
-  body:after, body:before {
-    background: orangered; } }
-
-@media (min-width: 81.26em) {
-  body:before {
-    content: "xxxlarge: 1300px"; }
-  body:after, body:before {
-    background: dodgerblue; } }
-
-@media (min-width: 88.76em) {
-  body:before {
-    content: "maxWidth: 1500px"; }
-  body:after, body:before {
-    background: red; } }
-
-@media (min-width: 131.26em) {
-  body:before {
-    content: "XL Desktop: 2100px"; }
-  body:after, body:before {
-    background: green; } }
-
 /*! Flickity v2.1.2
 https://flickity.metafizzy.co
 ---------------------------------------------- */
@@ -804,7 +714,7 @@ canvas {
 
 .c-menuCanvas {
   z-index: 9;
-  opacity: 0.95; }
+  opacity: 1; }
 
 @media (max-width: 31.24em) {
   .c-project--container * + * {
