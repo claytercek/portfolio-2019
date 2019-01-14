@@ -2,10 +2,10 @@ import Wave from "./Wave.js";
 import MenuWave from "./MenuWave.js";
 import TransitionWave from "./TransitionWave.js";
 var OPT = {
-	lineColors: ['#ac3061','#9b2c5e','#8b285c','#7b2459','#6b2156','#5b1d54','#491a51','#38164e'],
+	lineColors: ['#9b2c5e','#8b285c','#7b2459','#6b2156','#5b1d54','#491a51','#38164e'],
 	BGColor: "#25134b",
 	TransitionColor: "#ff446d",
-	pointCount: 8,
+	pointCount: 6,
 	thickness: 5,
 	strokeColor: "#444",
 	curved: true,
@@ -82,7 +82,7 @@ function initMenuWave() {
 var loop = function() {
 	window.requestAnimFrame(loop, c);
 	
-	if (window.pageYOffset < window.innerHeight && !transitioning && !(isMenu && !menuTransitioning)) {
+	if ( window.pageYOffset < window.innerHeight &&  ((transitioning && !isMenu) || !transitioning)) {
 		tick++;
 		ctx.clearRect(0, 0, cw, ch);
 		for (var wave of waves) {

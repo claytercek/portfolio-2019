@@ -17,6 +17,7 @@
 		> * {
 			pointer-events: all;
 		}
+		align-items: center;
 	}
 
 
@@ -130,7 +131,34 @@
 		font-family: $font-family-primary;
 		font-weight:600;
 		font-size: $font-size-base * 2.5;
-		text-shadow: 3px 3px $color-darkPurple;
+		position: relative;
+		text-shadow: 2px 2px $color-darkPurple;
+
+		@include media("<mlarge") {
+			font-size: $font-size-base * 1.8;
+		}
+
+		// &:after {
+		// 	content: '';
+		// 	position: absolute;
+		// 	width: 0;
+		// 	bottom: -5px;
+		// 	height: $line-width;
+		// 	display: block;
+		// 	right: 0;
+		// 	background: $color-red;
+		// 	transition: width .2s ease;
+		// }
+		
+		// &:hover:after {
+		// 	width: 100%;
+		// 	left: 0;
+		// }
+
+		// &:active {
+		// 	color: $color-white;
+		// }
+
 	}
 
 	

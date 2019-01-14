@@ -60,6 +60,10 @@
 				top: 5%;
 				width: 75%;
 			}
+			@include media("<medium") {
+				display: none;
+				
+			}
 		}
 
 		&#img-primary {
@@ -74,6 +78,12 @@
 				top: 15%;
 				max-height: 80%;
 				min-height: 400px;
+			}
+
+			@include media("<medium") {
+				left: $pad;
+				right: $pad;
+				max-width: 100%;
 			}
 		}
 		
