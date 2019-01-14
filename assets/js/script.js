@@ -47,11 +47,11 @@ function initAll() {
 
 
 var smoothstateOptions = {
-	repeatDelay: 500,
+	repeatDelay: 1400,
 	prefetch: true,
 	cacheLength: 2,
 	onStart: {
-		duration: 1100, // Duration of our animation
+		duration: 1400, // Duration of our animation
 		render: function ($container) {
 			// Add your CSS animation reversing class
 			background.inTransition();

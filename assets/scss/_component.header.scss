@@ -124,5 +124,14 @@
 		}
 	}
 
+	&--title {
+
+		color: $color-white;
+		font-family: $font-family-primary;
+		font-weight:600;
+		font-size: $font-size-base * 2.5;
+		text-shadow: 3px 3px $color-darkPurple;
+	}
+
 	
 }

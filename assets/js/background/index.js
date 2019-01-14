@@ -193,7 +193,6 @@ function inTransition() {
 			waves[i].toggleMenu(ch);
 		}
 	}
-
 }
 
 function outTransition() {
@@ -204,7 +203,7 @@ function outTransition() {
 	setTimeout(function() {
 		transitioning = false;
 		ctx3.clearRect(0, 0, cw, ch);
-	}, 1100)
+	}, 1400)
 }
 
 
