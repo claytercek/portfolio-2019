@@ -1610,19 +1610,20 @@ canvas {
     .c-about .social a {
       position: relative;
       z-index: 3; }
-      .c-about .social a::after {
-        content: "";
+      .c-about .social a:after {
+        content: '';
         position: absolute;
-        width: 100%;
+        width: 0;
+        bottom: -1px;
         height: 2px;
-        bottom: -4px;
-        background-color: #718bff;
-        left: 0;
-        -webkit-transition: height .3s ease;
-        transition: height .3s ease;
-        z-index: -1; }
-      .c-about .social a:hover::after {
-        height: 60%; }
+        display: block;
+        right: 0;
+        background: #ff446d;
+        -webkit-transition: width .2s ease;
+        transition: width .2s ease; }
+      .c-about .social a:hover:after {
+        width: 100%;
+        left: 0; }
 
 .c-form {
   max-width: 400px;

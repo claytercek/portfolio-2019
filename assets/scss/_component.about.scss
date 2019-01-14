@@ -48,20 +48,21 @@
 			position: relative;
 			z-index: 3;
 
-			&::after {
-				content: "";
+			&:after {
+				content: '';
 				position: absolute;
-				width: 100%;
+				width: 0;
+				bottom: -1px;
 				height: $line-width;
-				bottom: -4px;
-				background-color: $color-blue;
-				left: 0;
-				transition: height .3s ease;
-				z-index: -1;
+				display: block;
+				right: 0;
+				background: $color-red;
+				transition: width .2s ease;
 			}
-
-			&:hover::after {
-				height: 60%;
+			
+			&:hover:after {
+				width: 100%;
+				left: 0;
 			}
 		}
 	}
