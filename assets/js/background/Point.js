@@ -123,7 +123,7 @@ export default class Point {
 			this.targetX = this.anchorX + rand(0, this.OPT.range.x * 2) - this.OPT.range.x;
 			this.targetY = this.anchorY + rand(0, this.OPT.range.y * 2) - this.OPT.range.y;
 			this.tick = 0;
-			this.duration = rand(40, 20);
+			this.duration = rand(dur.min - 10, dur.max - 10);
 		}
 	}
 }

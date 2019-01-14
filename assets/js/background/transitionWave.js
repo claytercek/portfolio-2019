@@ -1,9 +1,10 @@
 import Point from "./Point.js";
 import Wave from "./Wave.js";
 
-export default class MenuWave extends Wave {
+export default class TransitionWave extends Wave {
 	constructor(config, ctx, cw, ch, color) {
-		super(config, ctx, cw, ch, 1.1, color)
+		super(config, ctx, cw, ch, 1.2, color)
+		this.transitionOut = false;
 	}
 
 	renderShape() {
@@ -23,12 +24,25 @@ export default class MenuWave extends Wave {
 		this.ctx.fill();
 	}
 
+	/**
+	 * @param {boolean} bool
+	 */
+	set flip(bool) {
+		this.transitionOut = bool;
+
+		if (bool) {
+			this.ctx.transform(1, 0, 0, -1, 0, this.ch);
+		} else {
+			this.ctx.resetTransform();
+		}
+	}
+
 
 	toggleMenu(ch) {
 		for (var i = 0; i < this.points.length; i++) {
 			this.points[i].toggleMenu(ch, {
 				min: 40,
-				max:70
+				max:90
 			});
 		}
 	}

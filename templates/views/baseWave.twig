@@ -15,9 +15,10 @@
         <canvas class="c-background"></canvas>
         <div class="content {{ padding ? "l-mainPadding l-headerPadding" : ""}}">
             {% block content %}
-                Sorry, no content
+            Sorry, no content
             {% endblock %}
         </div>
+        <canvas class="c-transitionCanvas"></canvas>
         {{ function("wp_footer") }}
     </body>
 </html>

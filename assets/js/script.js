@@ -31,5 +31,8 @@ $(document).ready(function() {
 		});
 		
 		$(".blocks-gallery-item").remove();
+
+
 	})
 });
+

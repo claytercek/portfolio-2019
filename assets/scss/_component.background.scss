@@ -10,9 +10,13 @@ canvas {
 	right: 0;
 	bottom: 0;
 	pointer-events: none;
+	min-height: 100vh;
 }
 
 .c-menuCanvas {
 	z-index: 9;
-	opacity: 1;
+}
+
+.c-transitionCanvas {
+	z-index: 20;
 }

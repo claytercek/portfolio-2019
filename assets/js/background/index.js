@@ -1,8 +1,10 @@
 import Wave from "./Wave.js";
 import MenuWave from "./MenuWave.js";
+import TransitionWave from "./TransitionWave.js";
 var OPT = {
 	lineColors: ['#ac3061','#9b2c5e','#8b285c','#7b2459','#6b2156','#5b1d54','#491a51','#38164e'],
 	BGColor: "#25134b",
+	TransitionColor: "#ff446d",
 	pointCount: 8,
 	thickness: 5,
 	strokeColor: "#444",
@@ -25,6 +27,8 @@ var waves = [];
 var isMenu = false;
 var c, ctx, cw, ch;
 var c2, ctx2, menuWave;
+var c3, ctx3, transitionWave;
+var transitioning = false;
 
 function init() {
 	if (!document.getElementsByClassName("c-background")[0]) {
@@ -35,8 +39,12 @@ function init() {
 	
 	c2 = document.getElementsByClassName("c-menuCanvas")[0];
 	ctx2 = c2.getContext("2d");
-	cw = c2.width = c.width = window.innerWidth;
-	ch = c2.height = c.height = (window.mobilecheck()) ? window.screen.availHeight : window.innerHeight;
+	
+	c3 = document.getElementsByClassName("c-transitionCanvas")[0];
+	ctx3 = c3.getContext("2d");
+
+	cw = c3.width = c2.width = c.width = window.innerWidth;
+	ch = c3.height = c2.height = c.height = (window.mobilecheck()) ? window.screen.availHeight : window.innerHeight;
 
 	OPT.range = {
 		x: cw * 0.05,
@@ -49,37 +57,35 @@ function init() {
 	}
 
 	menuWave = new MenuWave(OPT, ctx2, cw, ch, OPT.BGColor);
-
-	ctx.lineJoin = "round";
-	ctx.lineWidth = OPT.thickness;
-	ctx.strokeStyle = OPT.strokeColor;
-
-	ctx2.lineJoin = "round";
-	ctx2.lineWidth = OPT.thickness;
-	ctx2.strokeStyle = OPT.strokeColor;
+	transitionWave = new TransitionWave(OPT, ctx3, cw, ch, OPT.TransitionColor);
+	
+	ctx.lineJoin = ctx2.lineJoin = ctx3.lineJoin = "round";
+	ctx.lineWidth = ctx2.lineWidth = ctx3.lineWidth = OPT.thickness;
+	ctx.strokeStyle = ctx2.strokeStyle = ctx3.strokeStyle = OPT.strokeColor;
 
 	window.addEventListener("resize", resize, false);
 
 	loop();
 }
 
-var clear = function() {
-	ctx.clearRect(0, 0, cw, ch);
-	ctx2.clearRect(0, 0, cw, ch);
-};
-
 var loop = function() {
 	window.requestAnimFrame(loop, c);
-	clear();
 	
 	if (window.pageYOffset < window.innerHeight) {
 		tick++;
+		ctx.clearRect(0, 0, cw, ch);
 		for (var wave of waves) {
 			wave.update();
 		}
 	}
-
+	
+	ctx2.clearRect(0, 0, cw, ch);
 	menuWave.update();
+	
+	if (transitioning) {
+		ctx3.clearRect(0, 0, cw, ch);
+		transitionWave.update();
+	}
 };
 
 window.requestAnimFrame = (function() {
@@ -96,11 +102,13 @@ window.requestAnimFrame = (function() {
 })();
 
 var resize = function() {
+	
+
 	let oldCw = cw;
 	let oldCh = ch;
 
-	cw = c.width = c2.width = window.innerWidth;
-	ch = c.height = c2.height = (window.mobilecheck()) ? window.screen.availHeight : window.innerHeight;
+	cw = c3.width = c2.width = c.width = window.innerWidth;
+	ch = c3.height = c2.height = c.height = (window.mobilecheck()) ? window.screen.availHeight : window.innerHeight;
 
 	var ratio = {
 		w: oldCw / cw,
@@ -117,10 +125,11 @@ var resize = function() {
 	}
 
 	menuWave.resize(ratio, OPT.range);
+	transitionWave.resize(ratio, OPT.range);
 
-	ctx.lineJoin = "round";
-	ctx.lineWidth = OPT.thickness;
-	ctx.strokeStyle = OPT.strokeColor;
+	ctx.lineJoin = ctx2.lineJoin = ctx3.lineJoin = "round";
+	ctx.lineWidth = ctx2.lineWidth = ctx3.lineWidth = OPT.thickness;
+	ctx.strokeStyle = ctx2.strokeStyle = ctx3.strokeStyle = OPT.strokeColor;
 };
 
 
@@ -151,6 +160,26 @@ function toggleWaveMenu(i, ch) {
 	}, delay * 80);
 }
 
+function inTransition() {
+	if (transitioning == true) {
+		return;
+	}
+	
+	transitionWave.toggleMenu(ch);
+	transitioning = true;
+
+}
+
+function outTransition() {
+	transitioning = true;
+	transitionWave.flip = true;
+	transitionWave.toggleMenu(ch);
+
+	setTimeout(function() {
+		transitioning = false;
+	}, 1000)
+}
+
 
 window.mobilecheck = function() {
 	var check = false;
@@ -158,4 +187,4 @@ window.mobilecheck = function() {
 	return check;
 };
 
-export { init, toggleMenu };
+export { init, toggleMenu, inTransition, outTransition };
