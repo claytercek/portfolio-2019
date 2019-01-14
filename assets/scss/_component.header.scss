@@ -132,7 +132,8 @@
 		font-weight:600;
 		font-size: $font-size-base * 2.5;
 		position: relative;
-		text-shadow: 2px 2px $color-darkPurple;
+		text-shadow: 2px 2px $color-darkPurple,
+				3px 3px $color-darkPurple;
 
 		@include media("<mlarge") {
 			font-size: $font-size-base * 1.8;
