@@ -37,35 +37,46 @@ function init() {
 	c = document.getElementsByClassName("c-background")[0];
 	ctx = c.getContext("2d");
 	
-	c2 = document.getElementsByClassName("c-menuCanvas")[0];
-	ctx2 = c2.getContext("2d");
-	
 	c3 = document.getElementsByClassName("c-transitionCanvas")[0];
 	ctx3 = c3.getContext("2d");
-
-	cw = c3.width = c2.width = c.width = window.innerWidth;
-	ch = c3.height = c2.height = c.height = (window.mobilecheck()) ? window.screen.availHeight : window.innerHeight;
-
+	
+	cw = c3.width = c.width = window.innerWidth;
+	ch = c3.height = c.height = (window.mobilecheck()) ? window.screen.availHeight : window.innerHeight;
+	
 	OPT.range = {
 		x: cw * 0.05,
 		y: ch * 0.07
 	};
-
+	
 	for (let i = OPT.lineColors.length; i > 0; i--) {
 		let height = i / (OPT.lineColors.length + 1);
 		waves.push(new Wave(OPT, ctx, cw, ch, height, OPT.lineColors[i - 1]));
 	}
-
-	menuWave = new MenuWave(OPT, ctx2, cw, ch, OPT.BGColor);
-	transitionWave = new TransitionWave(OPT, ctx3, cw, ch, OPT.TransitionColor);
 	
-	ctx.lineJoin = ctx2.lineJoin = ctx3.lineJoin = "round";
-	ctx.lineWidth = ctx2.lineWidth = ctx3.lineWidth = OPT.thickness;
-	ctx.strokeStyle = ctx2.strokeStyle = ctx3.strokeStyle = OPT.strokeColor;
-
+	transitionWave = new TransitionWave(OPT, ctx3, cw, ch, OPT.TransitionColor);
+	menuWave = new MenuWave(OPT, ctx2, cw, ch, OPT.BGColor);
+	
+	ctx.lineJoin = ctx3.lineJoin = "round";
+	ctx.lineWidth = ctx3.lineWidth = OPT.thickness;
+	ctx.strokeStyle = ctx3.strokeStyle = OPT.strokeColor;
+	
 	window.addEventListener("resize", resize, false);
-
+	
 	loop();
+}
+
+function initMenuWave() {
+	c2 = document.getElementsByClassName("c-menuCanvas")[0];
+	ctx2 = c2.getContext("2d");
+	
+	c2.width = window.innerWidth;
+	c2.height = (window.mobilecheck()) ? window.screen.availHeight : window.innerHeight;
+	
+
+	ctx2.lineJoin = "round";
+	ctx2.lineWidth = OPT.thickness;
+	ctx2.strokeStyle = OPT.strokeColor;
+	menuWave = new MenuWave(OPT, ctx2, cw, ch, OPT.BGColor);
 }
 
 var loop = function() {
@@ -164,9 +175,17 @@ function inTransition() {
 	if (transitioning == true) {
 		return;
 	}
+	transitionWave.flip = false;
 	
 	transitionWave.toggleMenu(ch);
 	transitioning = true;
+
+	if (isMenu) {
+		isMenu = !isMenu;
+		for (var i = 0; i < waves.length; i++) {
+			waves[i].toggleMenu(ch);
+		}
+	}
 
 }
 
@@ -177,7 +196,8 @@ function outTransition() {
 
 	setTimeout(function() {
 		transitioning = false;
-	}, 1000)
+		ctx3.clearRect(0, 0, cw, ch);
+	}, 1100)
 }
 
 
@@ -187,4 +207,4 @@ window.mobilecheck = function() {
 	return check;
 };
 
-export { init, toggleMenu, inTransition, outTransition };
+export { init, toggleMenu, initMenuWave, inTransition, outTransition };

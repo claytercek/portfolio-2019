@@ -12,7 +12,7 @@ function init() {
 	mainItems = $(".c-project");
 	main = $("main");
 
-	if (mainItems.length == 0) {
+	if (asideItems.length == 0) {
 		return;
 	}
 
@@ -88,6 +88,10 @@ function setActive(newItem, isDown) {
 // Takes event as input
 // Determines whether to move to the next or previous item based on input
 function verticalNav(e) {
+	if (asideItems.length == 0) {
+		return;
+	}
+
 	if (isTransitoning) {
 		return;
 	}

@@ -717,7 +717,8 @@ canvas {
   z-index: 9; }
 
 .c-transitionCanvas {
-  z-index: 20; }
+  z-index: 30;
+  pointer-events: none; }
 
 @media (max-width: 31.24em) {
   .c-project--container * + * {

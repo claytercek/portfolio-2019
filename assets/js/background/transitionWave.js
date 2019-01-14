@@ -29,11 +29,11 @@ export default class TransitionWave extends Wave {
 	 */
 	set flip(bool) {
 		this.transitionOut = bool;
-
+		
 		if (bool) {
-			this.ctx.transform(1, 0, 0, -1, 0, this.ch);
+			this.ctx.setTransform(1, 0, 0, -1, 0, this.ch);
 		} else {
-			this.ctx.resetTransform();
+			this.ctx.setTransform(1, 0, 0, 1, 0, 0);
 		}
 	}
 

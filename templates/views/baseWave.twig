@@ -11,12 +11,14 @@
 		}}
     </head>
     <body>
-        {% include 'header.twig' %}
         <canvas class="c-background"></canvas>
-        <div class="content {{ padding ? "l-mainPadding l-headerPadding" : ""}}">
-            {% block content %}
-            Sorry, no content
-            {% endblock %}
+        <div id="wrapper">
+            {% include 'header.twig' %}
+            <div id="content" class="content {{ padding ? "l-mainPadding l-headerPadding" : ""}}">
+                {% block content %}
+                Sorry, no content
+                {% endblock %}
+            </div>
         </div>
         <canvas class="c-transitionCanvas"></canvas>
         {{ function("wp_footer") }}

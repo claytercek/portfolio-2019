@@ -18,5 +18,6 @@ canvas {
 }
 
 .c-transitionCanvas {
-	z-index: 20;
+	z-index: 30;
+	pointer-events: none;
 }
