@@ -28,7 +28,7 @@ var isMenu = false;
 var c, ctx, cw, ch;
 var c2, ctx2, menuWave;
 var c3, ctx3, transitionWave;
-var transitioning = false;
+var transitioning, menuTransitioning = false;
 
 function init() {
 	if (!document.getElementsByClassName("c-background")[0]) {
@@ -82,7 +82,7 @@ function initMenuWave() {
 var loop = function() {
 	window.requestAnimFrame(loop, c);
 	
-	if (window.pageYOffset < window.innerHeight) {
+	if (window.pageYOffset < window.innerHeight && !transitioning && !(isMenu && !menuTransitioning)) {
 		tick++;
 		ctx.clearRect(0, 0, cw, ch);
 		for (var wave of waves) {
@@ -90,8 +90,10 @@ var loop = function() {
 		}
 	}
 	
-	ctx2.clearRect(0, 0, cw, ch);
-	menuWave.update();
+	if (menuTransitioning) {
+		ctx2.clearRect(0, 0, cw, ch);
+		menuWave.update();
+	}
 	
 	if (transitioning) {
 		ctx3.clearRect(0, 0, cw, ch);
@@ -113,7 +115,6 @@ window.requestAnimFrame = (function() {
 })();
 
 var resize = function() {
-	
 
 	let oldCw = cw;
 	let oldCh = ch;
@@ -143,9 +144,11 @@ var resize = function() {
 	ctx.strokeStyle = ctx2.strokeStyle = ctx3.strokeStyle = OPT.strokeColor;
 };
 
+var timer;
 
 function toggleMenu() {
 	isMenu = !isMenu;
+	menuTransitioning = true;
 	for (var i = 0; i < waves.length; i++) {
 		toggleWaveMenu(i, ch);
 	}
@@ -158,6 +161,10 @@ function toggleMenu() {
 	setTimeout(function() {
 		menuWave.toggleMenu(ch) 
 	}, menuDelay)
+	clearInterval(timer);
+	timer = setTimeout(function(){
+		menuTransitioning = false;
+	}, menuDelay + 1200)
 }
 
 function toggleWaveMenu(i, ch) {
