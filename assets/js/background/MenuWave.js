@@ -3,6 +3,7 @@ import Wave from "./Wave.js";
 
 export default class MenuWave extends Wave {
 	constructor(config, ctx, cw, ch, color) {
+		config.pointCount = 8;
 		super(config, ctx, cw, ch, 1.1, color)
 	}
 
