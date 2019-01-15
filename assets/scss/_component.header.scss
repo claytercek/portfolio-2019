@@ -1,5 +1,4 @@
 .c-header {
-	
 	&--bar {
 		position: fixed;
 		left: 0;
@@ -9,8 +8,33 @@
 		z-index: 25;
 		display: flex;
 		justify-content: space-between;
+		transition: all .3s ease;
+		
+		&::before {
+			content:"";
+			left: 0;
+			right: 0;
+			position: absolute;
+			transition: all .3s ease;
+			height: 100%;
+			bottom: 100%;
+			background-color: $color-darkPurple;
+		}
+
+		&.scroll {
+			&::before {
+				bottom: 0;
+			}
+		}
+
 		@include media(">mlarge") {
-			padding: $pad * 4;
+			padding-left: $pad * 4;
+			padding-right: $pad * 4;
+			padding-top: $pad * 4;
+			
+			&.scroll {
+				padding-top: $pad;
+			}
 		}
 		pointer-events: none;
 
@@ -132,33 +156,26 @@
 		font-weight:600;
 		font-size: $font-size-base * 2.5;
 		position: relative;
-		text-shadow: 2px 2px $color-darkPurple,
-				3px 3px $color-darkPurple;
 
 		@include media("<mlarge") {
 			font-size: $font-size-base * 1.8;
 		}
 
-		// &:after {
-		// 	content: '';
-		// 	position: absolute;
-		// 	width: 0;
-		// 	bottom: -5px;
-		// 	height: $line-width;
-		// 	display: block;
-		// 	right: 0;
-		// 	background: $color-red;
-		// 	transition: width .2s ease;
-		// }
-		
-		// &:hover:after {
-		// 	width: 100%;
-		// 	left: 0;
-		// }
+		@include media(">=medium") {
+			background-color: $color-darkPurple;
+			padding: $pad/2 $pad;
+			transition: background-color .3s ease;
+			
+			&:hover {
+				background-color: $color-red;
+			}
+	
+			&:active {
+				color: $color-white;
+			}
+		}
 
-		// &:active {
-		// 	color: $color-white;
-		// }
+		
 
 	}
 

@@ -10,9 +10,9 @@
 			function("wp_head")
 		}}
     </head>
-    <body>
+    <body >
         <canvas class="c-background"></canvas>
-        <div id="wrapper">
+        <div id="wrapper" class="{{ customClass ? customClass : ""}}">
             {% include 'header.twig' %}
             <div id="content" class="content {{ padding ? "l-mainPadding l-headerPadding" : ""}}">
                 {% block content %}

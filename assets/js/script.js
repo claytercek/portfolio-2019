@@ -34,6 +34,14 @@ function initTransition() {
 		})
 	},100)
 
+	$(window).on("scroll", function() {
+		if ( $(window).scrollTop() > 50) {
+			$(".c-header--bar").addClass("scroll")
+		} else {
+			$(".c-header--bar").removeClass("scroll")
+		}
+	})
+
 	background.initMenuWave();
 	scrollNav.init();
 	form.init();
